@@ -6,6 +6,11 @@
     "analytics": "3946c8dc-e5eb-4dd2-bfb6-2fae65fc5674"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "standalone": false
+    }
+  },
   "projects": {
     "student-management": {
       "projectType": "application",
