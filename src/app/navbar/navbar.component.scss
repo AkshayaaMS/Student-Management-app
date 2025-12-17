@@ -52,3 +52,20 @@
   color: #fff;
   transform: translateY(-2px);
 }
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #6c757d; // bootstrap muted
+  font-size: 16px;
+}
+
+.search-bar-border {
+  padding-left: 38px; 
+}

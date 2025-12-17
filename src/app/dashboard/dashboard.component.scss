@@ -1,0 +1,84 @@
+ *{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family:"Serif";
+   line-height: 1.5;
+ }
+
+.mainCont{
+  margin-top:10px;
+}
+
+.flexCont{
+  display:flex;
+  justify-content:space-evenly;
+  background-color:sliver;
+}
+
+.cardCont {
+  width:auto;
+  height:auto;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardCont:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius:50%;
+}
+
+stuImg{
+  width:300px;
+}
+
+p{
+    text-align:center;
+    font-family:"Serif";
+    font-weight:800;
+    font-size:24px;
+    padding:4px;
+}
+
+.btn-style{
+  display: flex;
+  justify-content: space-around;
+  font-family:'roboto';
+}
+
+.edit-btn{
+  border-radius: 25px;
+  padding: 6px 18px;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #28a745; /* Bootstrap green */
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+  transform: translateY(-2px);
+}
+
+.delete-btn{
+  border-radius: 25px;
+  padding: 6px 18px;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #dc3545;
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+  transform: translateY(-2px);
+}
+
