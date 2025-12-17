@@ -1,0 +1,38 @@
+<div class="page">
+  <div class="card">
+    <h2>Student  Register</h2>
+ 
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <div class="row">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" placeholder="Enter email" />
+      </div>
+      <div class="error" *ngIf="hasError('email','required')">Email is required.</div>
+      <div class="error" *ngIf="hasError('email','email')">Enter a valid email.</div>
+ 
+      <div class="row">
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" placeholder="Create a password" />
+      </div>
+      <div class="error" *ngIf="hasError('password','required')">Password is required.</div>
+      <div class="error" *ngIf="hasError('password','minlength')">Minimum 4 characters.</div>
+ 
+      <div class="row">
+        <label for="confirm">Confirm password:</label>
+        <input id="confirm" type="password" formControlName="confirm" placeholder="Confirm password" />
+      </div>
+      <div class="error" *ngIf="form.errors?.['mismatch']">Passwords do not match.</div>
+ 
+      <div class="actions">
+        <button class="submit-btn" type="submit" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Submitting…' : 'Submit' }}
+        </button>
+        <a routerLink="/" class="link">Back to Login</a>
+      </div>
+    </form>
+ 
+    <div class="ok" *ngIf="successMsg">{{ successMsg }}</div>
+    <div class="error center" *ngIf="errorMsg">{{ errorMsg }}</div>
+  </div>
+</div>
+ 

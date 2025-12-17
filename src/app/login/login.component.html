@@ -1,0 +1,56 @@
+<body class="bg-image">
+  <div class="text">
+  <h1>Student Management System</h1></div>
+<div class="page">
+  <div class="card">
+    <h1 class="title">Welcome</h1>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        class="tab"
+        [class.active]="role === 'student'"
+        (click)="selectRole('student')"
+      >Student</button>
+ 
+      <button
+        class="tab"
+        [class.active]="role === 'admin'"
+        (click)="selectRole('admin')"
+      >Admin</button>
+    </div>
+ 
+    <!-- Form box -->
+    <div class="form-box">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="row">
+          <label for="email">Email:</label>
+          <input id="email" type="email" formControlName="email" placeholder="Enter email" />
+        </div>
+        <div class="error" *ngIf="hasError('email','required')">Email is required.</div>
+        <div class="error" *ngIf="hasError('email','email')">Enter a valid email.</div>
+ 
+        <div class="row">
+          <label for="password">Password:</label>
+          <input id="password" type="password" formControlName="password" placeholder="Enter password" />
+        </div>
+        <div class="error" *ngIf="hasError('password','required')">Password is required.</div>
+        <div class="error" *ngIf="hasError('password','minlength')">Minimum 4 characters.</div>
+      </form>
+    </div>
+ 
+    <!-- Actions: Login beside New User -->
+    <div class="actions-row">
+      <button class="login-btn" (click)="login()" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Logging in…' : 'Login' }}
+      </button>
+ 
+      <button class="link-btn" *ngIf="role === 'student'" (click)="newUser()">
+        New User?
+      </button>
+    </div>
+ 
+    <!-- Error area -->
+    <div class="global-error" *ngIf="errorMsg">{{ errorMsg }}</div>
+  </div>
+</div>
+</body>
