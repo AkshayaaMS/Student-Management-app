@@ -1,57 +1,19 @@
 <div class="mainCont">
-    <div class="addBtn">
-        <button class="btn btn-success">Add Student</button>
+
+  <div class="addBtn">
+    <button class="btn btn-success">Add Student</button>
+  </div>
+
+  <div class="flexCont">
+    <div class="cardCont" *ngFor="let student of students">
+      <img [src]="student.img" />
+      <p>{{ student.name }}</p>
+
+      <div class="btn-style">
+        <button class="btn btn-success edit-btn">Edit</button>
+        <button class="btn btn-danger delete-btn">Delete</button>
+      </div>
     </div>
-     <div class="flexCont">
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-</div>
-<div class="flexCont">
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-    <div class="cardCont">
-        <img [src]="stuImgPath" />
-        <p>Aakash</p>
-        <div class="btn-style">
-            <button class="btn btn-success edit-btn">Edit</button>
-            <button class="btn btn-danger delete-btn">Delete</button>
-        </div>
-    </div>
-</div>
+  </div>
+
 </div>
