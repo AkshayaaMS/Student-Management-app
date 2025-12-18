@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class Dashboard {
-  stuImgPath="assets/images/stuImg.png";
+  stuImgPath="assets/images/studentImg.png";
 }
