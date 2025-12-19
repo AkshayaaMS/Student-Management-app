@@ -1,0 +1,92 @@
+*{
+    background-color:transparent;
+}
+.page
+ {
+     min-height: 100vh;
+      display:flex; 
+      align-items:center; 
+      justify-content:center;
+      background-color:rgb(229, 228, 226);  
+      
+    }
+
+.card {
+     width: 380px; 
+     border:2px solid black; 
+     border-radius:8px;
+      
+      padding:16px;
+      font-family: 'Segoe UI', sans-serif;
+      background:transparent;
+     }
+
+.row {
+     display:grid;
+      grid-template-columns: 1fr 1fr;
+       align-items:center;
+        gap:10px;
+         margin:12px 0;
+         font-family: 'Segoe UI', sans-serif;
+         background:transparent;
+         }
+
+label { 
+    color:black; 
+    font-weight:700;
+    background:transparent;
+ }
+
+input {
+     padding:8px; 
+     border:2px solid black;
+      border-radius:6px;
+       outline:none;
+       background:transparent; 
+    }
+
+input:focus { border-color:black; }
+.actions {
+     display:flex;
+      align-items:center; 
+      gap:12px; 
+      margin-top:8px;
+     }
+
+.submit-btn {
+     border:2px solid black;
+      background:transparent; 
+     color:black; 
+     font-weight:700;
+      padding:8px 18px; 
+      border-radius:6px;
+       cursor:pointer;
+     }
+
+
+.link {
+     color:black;
+      font-weight:700;
+       text-decoration:none;
+     }
+
+
+.error {
+     color:#b00020; 
+     font-size:14px;
+     text-align:right; 
+    }
+
+
+.error.center {
+     text-align:center; 
+     margin-top:8px;
+     }
+
+
+.ok {
+     color:#0a7a2a; 
+     font-weight:700;
+      text-align:center; 
+      margin-top:8px;
+     }
