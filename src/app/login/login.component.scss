@@ -1,16 +1,38 @@
 /* Page center */
+*{
+  background-color:transparent;
+}
 .bg-image{
-  background-image:url('/assets/bg-login-img.jpg');
+ // background-image:url('/assets/images/bg-login-img.jpg');
   background-size:cover;
-   color: white;
+  
   text-align: center;
+  background-color:rgb(229, 228, 226);
+ // background: linear-gradient(to right, #4B0082, #8A2BE2);
+}
+
+.title{
+  font-size: 25px;
+  text-transform: uppercase;
+  min-height: 5vh; 
+  //color:rgb(135, 10, 224);
 }
  
 .text{
   position:absolute;
   top:50px;
-  right:550px;
+  right:420px;
   text-align: center;
+  color:rgb(135, 10, 224);
+  font-size: 16px; 
+  font-family: 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+ font-weight: bold; /* makes text bold */ 
+ color: #6a0dad; /* purple text */ 
+ font-size: 25px; /* slightly larger */ 
+ text-shadow: 2px 2px 4px #b57edc;
+ font-style: italic;
+ padding: 24px;
 }
  
 .page {
@@ -20,32 +42,39 @@
   justify-content: center;
   background: transparent;
   padding: 24px;
+  
 }
  
 /* Outer card */
 .card {
-  width: 420px;                 /* wider like your mock */
-  border: 2px solid #0d3c99;
+  width: 360px;                 /* wider like your mock */
+  border: 2px solid black;
   border-radius: 10px;
   background: transparent;
   padding: 16px 16px 20px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
   position: relative;
+  background: transparent;
+  // background: linear-gradient(135deg, #a569dc);
 }
  
 /* Tabs (top) */
 .tabs {
   display: flex;
-  gap: 14px;
+  gap: 0px;
   margin-bottom: 0;  
+  justify-content:center;
+  margin-bottom:0px;
+  background: transparent;
              /* seam handled by form-box overlap */
 }
  
+/* Student and Admin*/
 .tab {
   flex: 1;
-  border: 2px solid #0d3c99;
-  background: #eaf1ff;
-  color: #0d3c99;
+  border: 2px solid black;
+  background: transparent;
+  color: black;
   font-weight: 700;
   padding: 10px 0;
   border-radius: 8px 8px 0 0;
@@ -54,18 +83,18 @@
  
 /* Active tab: visually merges with form box; remove any vertical "line" */
 .tab.active {
-  background: #fff;
-  position: relative;
-  z-index: 2;
-  border-bottom-color: transparent;  /* removes bottom border to avoid seam */
+ //background: #fff;
+    position: relative;
+    z-index: 2;
+  //border-bottom-color: transparent;  /* removes bottom border to avoid seam */
 }
  
 /* Inner form box attaches seamlessly to active tab */
 .form-box {
   margin-top: -2px;                 /* overlap to hide seam under active tab */
-  border: 2px solid #0d3c99;
-  border-radius: 0 0 10px 10px;
-  padding: 16px 18px;
+  border: 2px solid black;
+  border-radius: 0 0 8px 8px;
+  padding: 14px;
 }
  
 /* Form grid */
@@ -73,45 +102,66 @@
   display: grid;
   grid-template-columns: 1fr 1.3fr; /* label/input proportion */
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin: 12px 0;
- 
+ font-family: 'Segoe UI', sans-serif;
 }
  
 label {
-  color: #113a7a;
+  color: black;
   font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
 }
  
 input {
   padding: 10px;
-  border: 2px solid #0d3c99;
+  border: 2px solid black;
   border-radius: 8px;
   outline: none;
+  font-family: 'Segoe UI', sans-serif;
 }
-input::placeholder { color: #8aa2d8; }
-input:focus { border-color: #2f63d6; }
+input:placeholder { color: #8aa2d8; }
+input:focus { border-color: black; }
  
+
+.actions { 
+  display:flex;
+   justify-content:center; 
+   margin-top:8px;
+   }
 /* Actions row: Login beside New User */
 .actions-row {
   display: flex;
   justify-content: center;     /* center row */
-  gap: 16px;                   /* space between buttons */
+  gap: 45px;                   /* space between buttons */
   margin-top: 14px;
 }
  
+
+login-btn {
+   border:2px solid black;
+    //background:#eaf1ff; 
+    color:black;
+     font-weight:700; 
+     padding:8px 18px; 
+     border-radius:6px; 
+     cursor:pointer;
+     font-family: 'Segoe UI', sans-serif;
+     }
+
+
 .login-btn,
 .link-btn {
-  border: 2px solid #0d3c99;
-  background: #eaf1ff;
-  color: #0d3c99;
+  border: 2px solid black;
+  //background: #eaf1ff;
+  color: black;
   font-weight: 700;
   padding: 8px 18px;
   border-radius: 8px;
   cursor: pointer;
 }
  
-.link-btn { background: #fff; }     /* New User theme difference */
+//.link-btn { background: #fff; }     /* New User theme difference */
 .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
  
 /* Error area */
@@ -119,29 +169,37 @@ input:focus { border-color: #2f63d6; }
   color: #b00020;
   margin-top: 10px;
   text-align:right;
+  font-weight:bold;
 }
+
+.error {
+   color:#b00020; 
+   font-size:14px;
+   text-align:right;
+   font-weight:bold; 
+  }
  
-.page { min-height: 100vh; display:flex; align-items:center; justify-content:center; background:transparent; padding:24px; }
-.card { width: 360px; border:2px solid #0d3c99; border-radius:8px; background:transparent; padding:16px 16px 20px; box-shadow:0 4px 18px rgba(0,0,0,0.08); }
+//.page { min-height: 100vh; display:flex; align-items:center; justify-content:center; /*background:transparent;*/padding:24px; }
+//.card { width: 360px; border:2px solid black; border-radius:8px; /*background:transparent;*/ padding:16px 16px 20px; box-shadow:0 4px 18px rgba(0,0,0,0.08); }
  
 /* Tabs */
-.tabs { display:flex; gap:0px; justify-content:center; margin-bottom:0px; }
-.tab { flex:1; border:2px solid #0d3c99; background:#eaf1ff; color:#0d3c99; font-weight:700; padding:8px 0; border-radius:6px 6px 0 0; cursor:pointer; }
-.tab.active { background:#fff; border-bottom-color:transparent; }
+//.tabs { display:flex; gap:0px; justify-content:center; margin-bottom:0px; }
+//.tab { flex:1; border:2px solid black; background:#eaf1ff; color:black; font-weight:700; padding:8px 0; border-radius:6px 6px 0 0; cursor:pointer; }
+//.tab.active { /*background:#fff; */border-bottom-color:transparent; }
  
 /* Inner form box */
-.form-box { border:2px solid #0d3c99; border-top:none; border-radius:0 0 8px 8px; padding:14px; }
+/*.form-box { border:2px solid black; border-top:none; border-radius:0 0 8px 8px; padding:14px; }
 .row { display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap:10px; margin:12px 0; }
-label { color:white; font-weight:700; }
-input { padding:8px; border:2px solid #0d3c99; border-radius:6px; outline:none; }
-input:focus { border-color:#2f63d6; }
+label { color:black; font-weight:700; }
+input { padding:8px; border:2px solid black; border-radius:6px; outline:none; }
+input:focus { border-color:black; }
  
 .actions { display:flex; justify-content:center; margin-top:8px; }
-.login-btn { border:2px solid #0d3c99; background:#eaf1ff; color:#0d3c99; font-weight:700; padding:8px 18px; border-radius:6px; cursor:pointer; }
+.login-btn { border:2px solid black; background:#eaf1ff; color:black; font-weight:700; padding:8px 18px; border-radius:6px; cursor:pointer; }
 .login-btn:disabled { opacity:0.6; cursor:not-allowed; }
  
 .new-user { display:flex; justify-content:center; margin-top:12px; }
-.link-btn { border:2px solid #0d3c99; background:#fff; color:#0d3c99; padding:8px 18px; border-radius:6px; font-weight:700; cursor:pointer; }
+.link-btn { border:2px solid black;background:#fff; color:black; padding:8px 18px; border-radius:6px; font-weight:700; cursor:pointer; }
 .link-btn.disabled { opacity:0.6; cursor:not-allowed; }
 .global-error { color:#b00020; margin-top:10px; text-align:right; }
-.error { color:#b00020; font-size:14px;text-align:right; }
+.error { color:#b00020; font-size:14px;text-align:right; }*/
