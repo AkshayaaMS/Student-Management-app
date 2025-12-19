@@ -4,19 +4,31 @@
     <button class="btn btn-success">Add Student</button>
   </div>
 
-  <div class="flexCont">
-    <div class="cardCont" *ngFor="let student of paginatedStudents">
-      <img [src]="student.img" alt="Student Image" />
-      <p>{{ student.name }}</p>
+  <div class="flexCont" *ngIf="students.length > 0; else noData">
+  <div class="cardCont" *ngFor="let student of paginatedStudents">
+    <img [src]="student.img" alt="Student Image" />
+    <p>{{ student.name }}</p>
 
-      <div class="btn-style">
-        <button class="btn btn-primary edit-btn">Edit</button>
-        <button class="btn btn-danger delete-btn">Delete</button>
-      </div>
+    <div class="btn-style">
+      <button class="btn btn-primary edit-btn">Edit</button>
+
+      <button
+        class="btn btn-danger delete-btn"
+        (click)="openDeleteModal(student)">
+        Delete
+      </button>
     </div>
   </div>
+</div>
 
-<div class="pagination">
+<ng-template #noData>
+  <div class="no-data">
+    No student data to show
+  </div>
+</ng-template>
+
+
+  <div class="pagination" *ngIf="students.length > 0">
   <button
     class="page-btn"
     (click)="prevPage()"
@@ -40,3 +52,17 @@
   </button>
 </div>
 
+
+
+<div class="modal-backdrop" *ngIf="isModalOpen">
+
+  <div class="modal-box">
+    <h3>Are you sure you want to delete?</h3>
+
+    <div class="modal-actions">
+      <button class="btn btn-secondary custom-btn" (click)="closeModal()">No</button>
+      <button class="btn btn-danger custom-btn " (click)="confirmDelete()">Yes</button>
+    </div>
+  </div>
+
+</div> 
